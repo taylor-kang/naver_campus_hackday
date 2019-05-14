@@ -8,16 +8,25 @@ function OrderSummary() {
         <ul>
           <li>쇼핑</li>
           <li>컨텐츠</li>
-          <li>QR결</li>
+          <li>QR결제</li>
           <li>예약</li>
           <li>제휴카드</li>
         </ul>
       </div>
       <div className={'summary_content'}>
         <ul>
-          <li>배송중</li>
-          <li>배송완료</li>
-          <li>취소/반품/교환</li>
+          <li className={'ship1'}>
+            배송중
+            <i className="fas fa-truck"></i>
+          </li>
+          <li className={'ship2'}>
+            배송완료
+            <i className="fas fa-box"></i>
+          </li>
+          <li className={'ship3'}>
+            취소/반품/교환
+            <i className="fas fa-exchange-alt"></i>
+          </li>
         </ul>
       </div>
     </div>
