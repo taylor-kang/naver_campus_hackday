@@ -1,6 +1,7 @@
 import React from 'react';
 import OrderSummary from '../component/order-summary';
 import './order-list.scss'
+import Order from '../../../model/order'
 
 
 function OrderList() {
@@ -10,6 +11,16 @@ function OrderList() {
     year: new Date().getFullYear(),
   };
 
+  // var orders: Order[];
+  //
+  //
+  // const orderList = orders.map(function(order) {
+  //   return(
+  //     <li key={order.order_id}>
+  //       {order.order_id}
+  //     </li>
+  //   )
+  // })
 
   return (
     <div className={'order-list'}>
