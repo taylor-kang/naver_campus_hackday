@@ -1,0 +1,11 @@
+.header {
+  width: 100%;
+  min-width: 1130px;
+  margin-bottom: 30px;
+  background-color: $colorPrimary;
+  color: white;
+  .content {
+    height: 110px;
+    margin: 0 auto;
+  }
+}

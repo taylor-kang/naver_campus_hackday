@@ -27,11 +27,17 @@ module.exports = {
 
             {
                 test: /\.(s*)css$/,
-                loaders: [
-                    require.resolve('style-loader'),
-                    require.resolve('css-loader'),
-                    require.resolve('sass-loader'),
-                ]
+                use: [
+                    'style-loader',
+                    'css-loader',
+                    'sass-loader',
+                    {
+                        loader: 'sass-resources-loader',
+                        options: {
+                            resources: ['./src/scss/styles.scss']
+                        },
+                    },
+                ],
             },
             {
                 test: /\.(jpe?g|png|gif|woff|woff2|eot|ttf|svg)(\?[a-z0-9=.]+)?$/,
