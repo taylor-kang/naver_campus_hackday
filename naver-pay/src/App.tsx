@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.scss';
-import {Route, Switch} from 'react-router-dom';
+import {Route, Switch, Redirect} from 'react-router-dom';
 import OrderList from "./module/order-list/page/order-list";
 import OrderDetail from "./module/order-detail/page/order-detail";
 import Header from './component/header/header';
@@ -19,6 +19,9 @@ class App extends React.Component {
             </div>
             <div className="right-section">
               <Switch>
+                <Route exact path="/" render={() => (
+                  <Redirect to="/order"/>
+                )}/>
                 <Route exact path="/order" component={OrderList}/>
                 <Route exact path="/order/:id" component={OrderDetail}/>
               </Switch>

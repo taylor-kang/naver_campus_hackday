@@ -1,0 +1,29 @@
+.order-summary {
+  .summary_menu {
+    >ul {
+
+      width: 100%;
+      list-style: none;
+      display: table;
+      width: 100%;
+      font-size: 12px;
+      table-layout: fixed;
+      >li {
+        display: table-cell;
+        *width: 20%;
+        height: 44px;
+        text-align: center;
+        padding: 1px 0 1px 1px;
+        background-color: #606e89;
+        color: #fff;
+        text-decoration: none;
+      }
+    }
+  }
+  .summary_content {
+    position: relative;
+    padding: 20px 347px 20px 0;
+    border: 1px solid #dadddf;
+    background-color: #edeff2;
+  }
+}

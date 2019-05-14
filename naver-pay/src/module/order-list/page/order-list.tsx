@@ -1,9 +1,10 @@
 import React from 'react';
+import OrderSummary from '../component/order-summary';
 
 function OrderList (){
     return (
       <div>
-        <h1>{"this is order-list"}</h1>
+        <OrderSummary/>
       </div>
     );
 }
