@@ -1,0 +1,24 @@
+{
+  "name": "pay-api-server",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon ./bin/www",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "soopark",
+  "license": "ISC",
+  "dependencies": {
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "express": "^4.16.4",
+    "http-errors": "^1.7.2",
+    "morgan": "^1.9.1",
+    "mysql2": "^1.6.5",
+    "nodemon": "^1.19.0",
+    "jade": "~1.11.0",
+    "path": "^0.12.7",
+    "sequelize": "^5.8.6"
+  }
+}
