@@ -4,9 +4,9 @@ const path = require('path')
 const db = require(path.join(__dirname, '..', 'controller'));
 
 /* GET users listing. */
-router.get('/', async function(req, res, next) {
+router.get('/:user_id', async function(req, res, next) {
   const user = {};
-  await db.getUsers(user);
+  await db.getUsers(user, req.params.user_id);
   res.send(user);
 });
 

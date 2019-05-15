@@ -1,8 +1,12 @@
 const path = require('path');
 const db = require(path.join(__dirname, '..', 'models'));
 
-const getUsers = async (ctx) => {
-  const users = await db.User.findAll();
+const getUsers = async (ctx, id) => {
+  const users = await db.User.findAll({
+    where: {
+      user_id: id
+    }
+  });
   ctx.body = users;
 }
 
