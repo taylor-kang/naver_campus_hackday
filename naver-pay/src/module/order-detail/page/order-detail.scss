@@ -1,0 +1,127 @@
+.order-detail {
+  .header-title {
+    font-size: 25px;
+    margin-bottom: 5px;
+    text-align: left;
+    font-weight: bold;
+  }
+  .header-box {
+    width: 100%;
+    border: 2px solid black;
+    padding: 15px 0;
+    border: 5px solid #eff0f2;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+
+  }
+
+  .order-detail-table {
+    width: 100%;
+    border: none;
+    border-top: 1px solid black;
+    border-bottom: 1px solid #dddde1;
+    table-layout: fixed;
+
+    margin-bottom: 35px;
+
+    >table {
+      border-collapse:collapse;
+      width: 100%;
+
+      th {
+        padding: 13px 0 12px;
+        color: #20232c;
+        font-weight: normal;
+      }
+      td {
+        padding: 15px 0;
+        border-top: 1px solid #edeeef;
+        color: #20232c;
+        vertical-align: middle;
+        word-wrap: break-word;
+        word-break: break-all;
+      }
+    }
+  }
+
+  .price-detail-table {
+    width: 100%;
+    border: none;
+    border-top: 1px solid black;
+    border-bottom: 1px solid #dddde1;
+    table-layout: fixed;
+    margin-bottom: 35px;
+    text-align: left;
+    font-size: 12px;
+
+    > table {
+      border-collapse:collapse;
+      width: 100%;
+      td {
+        padding: 10px 15px;
+      }
+    }
+
+    .pay-price {
+      background-color: $colorPrimary;
+      color: white;
+    }
+
+    .table-header {
+      > td {
+        border-right: 1px solid #dddde1;
+      }
+      .point-price {
+        border-right: 0px;
+      }
+    }
+
+    .table-value {
+      text-align: right;
+      >td {
+        border-bottom: 1px solid #dddde1;
+        padding: 0px 10px 10px;
+      }
+      >td:not(:last-child) {
+        border-right: 1px solid #dddde1;
+
+      }
+    }
+
+  }
+
+  .delivery-detail-table {
+    width: 100%;
+    border: none;
+    border-top: 1px solid black;
+    border-bottom: 1px solid #dddde1;
+    table-layout: fixed;
+    margin-bottom: 35px;
+    text-align: left;
+    font-size: 12px;
+
+    > table {
+      border-collapse:collapse;
+      width: 100%;
+
+    }
+    .label {
+      text-align: center;
+      padding: 8px 0px;
+      background-color: #eff0f2;
+    }
+    .value {
+      padding: 5px 15px 6px;
+      color: #565960;
+      line-height: 22px;
+      word-break: break-all;
+      word-wrap: break-word;
+      border-right: 1px solid #dddde1;
+    }
+    .user-info {
+      padding: 0px 10px;
+    }
+  }
+}

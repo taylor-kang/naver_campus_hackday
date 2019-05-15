@@ -3,7 +3,7 @@ import "./header.scss"
 function Header (){
   return (
     <div className='header'>
-      <div className='content'>{"this is header"}</div>
+      <div className='content'>{}</div>
     </div>
   );
 }
