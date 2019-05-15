@@ -45,7 +45,19 @@
           background-color: #606e89;
           display: block;
           border-radius: 50px;
-          margin: 10px auto;
+          margin: 10px 0px 10px 30px;
+          float:left
+        }
+        >strong {
+          font-size: 40px;
+          float: left;
+          margin-top: 15px;
+          margin-left: 15px;
+          font-weight: 300;
+          color: #4e5a72;
+        }
+        >label {
+          display: block;
         }
       }
     }

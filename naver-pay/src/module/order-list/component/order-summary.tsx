@@ -1,5 +1,5 @@
 import React from 'react';
-import './order-summary.scss'
+import './order-summary.scss';
 
 class OrderSummary extends React.Component {
 
@@ -31,6 +31,12 @@ class OrderSummary extends React.Component {
   //   // }
 
   render() {
+    const orderSummary = {
+      on_delivery: 1,
+      delivery_complete: 4,
+      cancel: 2
+    };
+
     return (
       <div className='order-summary'>
         <div className='summary_menu'>
@@ -45,19 +51,19 @@ class OrderSummary extends React.Component {
         <div className={'summary_content'}>
           <ul>
             <li className={'ship1'}>
-              배송중
+              <label>배송중</label>
               <i className="fas fa-truck"></i>
-              {/*{orderSummary.on_delivery}*/}
+              <strong>{orderSummary.on_delivery}</strong>
             </li>
             <li className={'ship2'}>
-              배송완료
+              <label>배송완료</label>
               <i className="fas fa-box"></i>
-              {/*{orderSummary.on_delivery}*/}
+              <strong>{orderSummary.on_delivery}</strong>
             </li>
             <li className={'ship3'}>
-              취소/반품/교환
+              <label>취소/반품/교환</label>
               <i className="fas fa-exchange-alt"></i>
-              {/*{orderSummary.on_delivery}*/}
+              <strong>{orderSummary.on_delivery}</strong>
             </li>
           </ul>
         </div>
