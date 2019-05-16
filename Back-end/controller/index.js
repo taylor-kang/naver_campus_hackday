@@ -12,6 +12,16 @@ const getUsers = async (ctx, id) => {
   ctx.body = users;
 }
 
+const getSeller = async (ctx, id) => {
+  const seller = await db.Seller.findOne({
+    where: {
+      seller_id: id
+    }
+  });
+  ctx.body = seller;
+}
+
+const getOrders = async (ctx, id) => {
 const getOrders = async (ctx, id, page, status, startDate, endDate) => {
   // let pageSize = 5;
   // let offset = (page-1) * pageSize;
@@ -71,6 +81,7 @@ const getOrderById = async (ctx, id) => {
 
 module.exports = {
   getUsers,
+  getSeller,
   getOrders,
   getOrderById
 }
