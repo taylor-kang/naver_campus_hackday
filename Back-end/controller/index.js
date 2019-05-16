@@ -10,6 +10,15 @@ const getUsers = async (ctx, id) => {
   ctx.body = users;
 }
 
+const getSeller = async (ctx, id) => {
+  const seller = await db.Seller.findOne({
+    where: {
+      seller_id: id
+    }
+  });
+  ctx.body = seller;
+}
+
 const getOrders = async (ctx, id) => {
   const orders = await db.User.findAll({
     include: {
@@ -50,6 +59,7 @@ const getOrderById = async (ctx, id) => {
 
 module.exports = {
   getUsers,
+  getSeller,
   getOrders,
   getOrderById
 }
