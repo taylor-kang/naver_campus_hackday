@@ -21,7 +21,6 @@ const getSeller = async (ctx, id) => {
   ctx.body = seller;
 }
 
-const getOrders = async (ctx, id) => {
 const getOrders = async (ctx, id, page, status, startDate, endDate) => {
   // let pageSize = 5;
   // let offset = (page-1) * pageSize;
