@@ -18,9 +18,9 @@ export default {
         });
     },
 
-    getParam: function(res,param) {
+    getParam: function(res,param,queryparms=null) {
         return new Promise(function(resolve, reject) {
-            axios.get(serverUrl + res + '/' + param).then(resolve).catch(reject);
+            axios.get(serverUrl + res + '/' + param, {params: queryparms}).then(resolve).catch(reject);
         });
     },
 

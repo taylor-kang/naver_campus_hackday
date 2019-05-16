@@ -73,7 +73,7 @@ class OrderDetail extends React.Component {
           </div>
           <div className={'header-box'}>
             <label>결제일자</label>
-            <span> {order.date} </span>
+            <span> {order.date.toString().slice(0,10)} </span>
             <label>결제번호</label>
             <span> {order.id} </span>
           </div>

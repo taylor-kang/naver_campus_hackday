@@ -44,14 +44,15 @@ module.exports = {
                 loader: 'url-loader?limit=100000'
             }
             ]
-    },
+    }
     devServer: {
         historyApiFallback: true,
     },
     plugins: [
         new HtmlWebpackPlugin({
             template: './public/index.html'
-        })
+        }),
+        '@babel/plugin-transform-runtime'
     ],
     // When importing a module whose path matches one of the following, just
     // assume a corresponding global variable exists and use that instead.

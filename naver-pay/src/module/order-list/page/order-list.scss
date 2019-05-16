@@ -7,20 +7,19 @@
     border: 1px solid #dadddf;
     background-color: #edeff2;
     width: calc(100% - 2px);
-    > form {
-      width: 100%;
-      display: inline-block;
-      margin: 19px 6px;
-    }
+    height: 40px;
     .form-input {
       display: inline-block;
       height: 30px;
       float: left;
+      line-height: 40px;
     }
     .month-area {
       width: 40%;
       > ul {
         width: 100%;
+        margin-top: 6px;
+        margin-left: 2px;
         display: table;
         border: 1px solid #f0f5f8;
         > li {
@@ -31,6 +30,8 @@
           background-color: #fff;
           line-height: 30px;
           text-align: center;
+          cursor: pointer;
+
         }
       }
     }
@@ -102,7 +103,6 @@
             height: 90px;
             position: absolute;
             text-align: center;
-            top: 45px;
             background-color: #f0f5f8;
             left: 10px;
           }
@@ -130,7 +130,38 @@
             color: #a5a5a5;
           }
           .item-status {
-            color: #a5a5a5;
+            color: white;
+            >span {
+              border-radius: 40px;
+              height: 25px;
+              display: inline-block;
+              line-height: 25px;
+              width: 65px;
+              font-weight: bold;
+              text-align: center;
+              font-size: 15px;
+            }
+            .status0 {
+              background-color: #27AE60;
+
+            }
+            .status1 {
+              background-color: #E74C3C;
+
+            }
+            .status2 {
+              background-color: #FFC300;
+
+            }
+            .status3 {
+              background-color: #2980B9;
+
+            }
+            .status4 {
+              background-color: #6027AE;
+
+            }
+
           }
         }
         .seller-info {
