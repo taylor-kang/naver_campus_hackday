@@ -1,5 +1,7 @@
+import Delivery from "./delivery"
 export default interface OrderItem{
-  item_id: number;
+  id: number;
+  order_id: number;
   price: number;
   name: string;
   img_url: string;
@@ -8,4 +10,5 @@ export default interface OrderItem{
   option?: string
   amount: number | 1;
   status: string;
+  delivery: Delivery
 }

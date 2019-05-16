@@ -4,7 +4,8 @@ import './order-list.scss';
 import Order from '../../../model/order';
 import PaginationResult from '../../../model/pagination';
 import {Link} from 'react-router-dom';
-
+import axios from "axios";
+import Api from "../../../api";
 
 class OrderList extends React.Component {
 
@@ -22,16 +23,32 @@ class OrderList extends React.Component {
         startDate: Date,
         endDate: Date,
         status: '',
-      }
+      },
+      orderList: {},
     };
+
+    const userId = 'test';
+    const that = this;
+
+    if (userId) {
+      Api.getParam('/orders', userId).then(function (res) {
+        let orderList = {};
+        console.log(res.data.body);
+        res.data.body.map(order => {
+          orderList.push(order);
+        });
+        that.setState({orderList: orderList});
+      });
+    }
   }
+
 
   setDateRange() {
     let tmpDate = new Date();
     tmpDate = new Date(tmpDate.getFullYear(), this.state.selectedMonth, 1);
     let tmp = this.state.searchOptions;
     tmp.startDate = tmpDate;
-    tmpDate = new Date(tmpDate.getFullYear(), this.state.selectedMonth+1, 0);
+    tmpDate = new Date(tmpDate.getFullYear(), this.state.selectedMonth + 1, 0);
     tmp.endDate = tmpDate;
     this.setState({searchOptions: tmp});
   };
@@ -140,6 +157,7 @@ class OrderList extends React.Component {
     });
 
     return (
+      this.state.orderList ?
       <div className={'order-list'}>
         <OrderSummary/>
         <div className={'order-filter'}>
@@ -234,6 +252,7 @@ class OrderList extends React.Component {
           </ul>
         </div>
       </div>
+        :null
     );
 
   }
