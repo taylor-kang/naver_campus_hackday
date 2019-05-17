@@ -2,6 +2,7 @@ var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
 var logger = require('morgan');
+var process = require('process');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -43,5 +44,11 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
+process.on('uncaughtException', (err) => {
+//  fs.writeSync(1, `Caught exception: ${err}\n`);
+	console.dir(err);
+});
+
 
 module.exports = app;
