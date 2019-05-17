@@ -5,30 +5,35 @@ import OrderList from "./module/order-list/page/order-list";
 import OrderDetail from "./module/order-detail/page/order-detail";
 import Header from './component/header/header';
 import Footer from './component/footer/footer';
-import "./App.scss"
+import "./App.scss";
 import LeftSection from './component/left-sc/left-sc';
+import { withRouter } from 'react-router';
 
 class App extends React.Component {
   public render() {
     return (
-        <div className="App">
-          <Header/>
-          <div className="container">
-            <div className='left-section'>
-              <LeftSection/>
-            </div>
-            <div className="right-section">
-              <Switch>
-                <Route exact path="/" render={() => (
-                  <Redirect to="/order"/>
-                )}/>
-                <Route exact path="/order" component={OrderList}/>
-                <Route exact path="/order/:id" component={OrderDetail}/>
-              </Switch>
-            </div>
+      <div className="App">
+        <Header/>
+        <div className="container">
+          <div className='left-section'>
+            <LeftSection/>
           </div>
-          <Footer/>
+          <div className="right-section">
+            <Switch>
+              <Route exact path="/" render={() => (
+                <Redirect to="/order"/>
+              )}/>
+              <Route exact path="/order" component={OrderList}/>
+              <Route exact path="/order/:id" render={(props) => {
+                console.log('test');
+                console.log(props);
+                return <OrderDetail {...props} />
+              }}/>
+            </Switch>
+          </div>
         </div>
+        <Footer/>
+      </div>
     );
   }
 }

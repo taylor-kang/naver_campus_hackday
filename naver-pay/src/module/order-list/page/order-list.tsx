@@ -24,8 +24,8 @@ function OrderItemList(props) {
   let orders = props.orders;
   const status = ['결제완료', '결제중', '배송중', '배송완료', '구매확정'];
   const itemList = [];
-  orders.forEach(order => {
-    order.items.forEach(item => {
+  orders.forEach((order, o) => {
+    order.items.forEach((item,i, array) => {
       itemList.push(
         <li className="order-item" key={item.id}>
           <div className="item-info">
@@ -71,10 +71,9 @@ function OrderItemList(props) {
   );
 }
 
-
 class OrderList extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
 
     this.state = {
       userId: 'test',
@@ -89,16 +88,17 @@ class OrderList extends React.Component {
 
     this.submitFilter = this.submitFilter.bind(this);
     this.setDateRange = this.setDateRange.bind(this);
+  }
 
-    const that = this;
+  componentDidMount() {
     if (this.state.userId) {
       formatDate;
-      Api.getParam('/orders', this.state.userId).then(function (res) {
+      Api.getParam('/orders', this.state.userId).then((res) => {
         let orderList = [];
         res.data.body[0].orders.forEach(order => {
           orderList.push(order);
         });
-        that.setState({orderList: orderList});
+        this.setState({orderList: orderList});
       });
     }
   }
@@ -113,7 +113,6 @@ class OrderList extends React.Component {
     this.setState({searchOptions: tmp});
   };
 
-
   submitFilter() {
     Api.getParam('/orders', this.state.userId, {
       startDate: formatDate(this.state.searchOptions.startDate),
@@ -121,7 +120,6 @@ class OrderList extends React.Component {
       status: this.state.searchOptions.status,
     }).then((res) => {
       if (res.data.body[0]) {
-        console.log(res.data.body[0]);
         let orderList = [];
         res.data.body[0].orders.forEach(order => {
           orderList.push(order);

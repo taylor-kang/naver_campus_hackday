@@ -1,5 +1,8 @@
+var React = require('react');
+var ReactDOM = require('react-dom');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+var webpack = require('webpack');
 
 module.exports = {
     entry: "./src/index.tsx",
@@ -20,7 +23,7 @@ module.exports = {
     module: {
         rules: [
             // All files with a '.ts' or '.tsx' extension will be handled by 'awesome-typescript-loader'.
-            { test: /\.tsx?$/, loader: "babel-loader" },
+            { test: /\.tsx?$/, loaders: ['babel-loader'], },
 
             // All output '.js' files will have any sourcemaps re-processed by 'source-map-loader'.
             { enforce: "pre", test: /\.js$/, loader: "source-map-loader" },
@@ -44,20 +47,18 @@ module.exports = {
                 loader: 'url-loader?limit=100000'
             }
             ]
-    }
+    },
     devServer: {
         historyApiFallback: true,
     },
     plugins: [
+        new webpack.ProvidePlugin({
+            "React": "react",
+        }),
         new HtmlWebpackPlugin({
             template: './public/index.html'
-        }),
-        '@babel/plugin-transform-runtime'
+        })
     ],
-    // When importing a module whose path matches one of the following, just
-    // assume a corresponding global variable exists and use that instead.
-    // This is important because it allows us to avoid bundling all of our
-    // dependencies, which allows browsers to cache those libraries between builds.
     externals: {
         "react": "React",
         "react-dom": "ReactDOM"

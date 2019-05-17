@@ -10,6 +10,7 @@
     "@types/react-dom": "^16.8.4",
     "@types/react-router-dom": "^4.3.3",
     "axios": "^0.18.0",
+    "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-polyfill": "^6.26.0",
     "file-loader": "^3.0.1",
     "react": "^16.8.6",
@@ -41,6 +42,7 @@
     ]
   },
   "devDependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.4.4",
     "@babel/plugin-transform-runtime": "^7.4.4",
     "@babel/preset-typescript": "^7.3.3",
     "@types/react-redux": "^7.0.9",

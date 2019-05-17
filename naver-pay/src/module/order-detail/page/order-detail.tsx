@@ -49,12 +49,13 @@ class OrderDetail extends React.Component {
       orderId: this.props.match.params.id,
       orderItems: null,
     };
+  }
 
+  componentDidMount() {
     const orderId = this.state.orderId;
-    const that = this;
     if (orderId) {
-      Api.getParam('/order', orderId).then(function (res) {
-        that.setState({
+      Api.getParam('/order', orderId).then((res) => {
+        this.setState({
           orderItems: res.data.body[0]
         });
       });
