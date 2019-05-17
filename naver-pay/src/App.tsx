@@ -7,7 +7,7 @@ import Header from './component/header/header';
 import Footer from './component/footer/footer';
 import "./App.scss";
 import LeftSection from './component/left-sc/left-sc';
-import { withRouter } from 'react-router';
+import {withRouter} from 'react-router';
 
 class App extends React.Component {
   public render() {
@@ -23,12 +23,8 @@ class App extends React.Component {
               <Route exact path="/" render={() => (
                 <Redirect to="/order"/>
               )}/>
-              <Route exact path="/order" component={OrderList}/>
-              <Route exact path="/order/:id" render={(props) => {
-                console.log('test');
-                console.log(props);
-                return <OrderDetail {...props} />
-              }}/>
+              <Route exact path="/order" component={withRouter(OrderList)}/>
+              <Route exact path="/order/:id" component={withRouter(OrderDetail)}/>
             </Switch>
           </div>
         </div>

@@ -29,7 +29,7 @@ function OrderItemList(props) {
       itemList.push(
         <li className="order-item" key={item.id}>
           <div className="item-info">
-            <Link to={"/order/" + order.id}>
+            <Link to={`/order/${order.id}`}>
               <div className={'inner'}>
                 <div className="item-thumb">
                   <img/>
